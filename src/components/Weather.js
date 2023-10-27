@@ -95,11 +95,15 @@ const Weather = () => {
           <div>
             <h3>{weather.name}, {weather.sys.country}</h3>
             <div className="horContainer">
-              <p className="temp">{Math.round(weather.main.temp)}{unit === 'metric' ? '°C' : '°F'}</p>
+              <p className="temp">
+              {unit === 'metric'
+                ? `${Math.round(weather.main.temp)}°C`
+                : `${Math.round((weather.main.temp * 9) / 5 + 32)}°F`}
+              </p>
               {weatherIcon && <img src={weatherIcon} className="weatherLogo" alt="Weather Logo" />}
             </div>
             <div className="horContainer">
-              <p>(feels Like: {feelsLike}{unit === 'metric' ? '°C)' : '°F)'}</p>
+              <p>(feels Like: {unit === 'metric' ? `${feelsLike}°C` : `${Math.round((feelsLike * 9) / 5 + 32)}°F`})</p>
             </div>
             <div className="horContainer">
               <span className="label">wind speed:</span>
