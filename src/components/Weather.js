@@ -102,15 +102,15 @@ const Weather = () => {
               <p>(feels Like: {feelsLike}{unit === 'metric' ? '°C)' : '°F)'}</p>
             </div>
             <div className="horContainer">
-              <span className="label">Wind Speed:</span>
+              <span className="label">wind speed:</span>
               <p>{windSpeed} m/s</p>
             </div>
             <div className="horContainer">
-              <span className="label">Sunrise:</span>
+              <span className="label">sunrise:</span>
               <p>{sunriseTime}</p>
             </div>
             <div className="horContainer">
-              <span className="label">Sunset:</span>
+              <span className="label">sunset:</span>
               <p>{sunsetTime}</p>
             </div>
           </div>
