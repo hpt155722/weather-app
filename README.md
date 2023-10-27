@@ -19,6 +19,6 @@ A basic weather app
  <br>
 
  <div>
-    <img style = "width: 20vh; margin: 7vw;" src = "readmeThumbnails/weatherApp22.png">
-    <img style = "width: 20vh; margin: 7vw;" src = "readmeThumbnails/weatherApp2.png">
+    <img style = "width: 18vw; margin: 5vh;" src = "readmeThumbnails/weatherApp22.png">
+    <img style = "width: 18vw; margin: 5vh;" src = "readmeThumbnails/weatherApp2.png">
 </div>
