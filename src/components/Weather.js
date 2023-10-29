@@ -6,6 +6,8 @@ import snowImage from '../images/snow.webp';
 import rainImage from '../images/rain.webp';
 import thunderstormImage from '../images/thunderstorm.webp';
 
+
+
 const Weather = () => {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
@@ -25,6 +27,7 @@ const Weather = () => {
       setError('Invalid city. Please try again :('); // Set the error message
     }
   };
+
 
   let weatherIcon;
 
@@ -53,6 +56,8 @@ const Weather = () => {
     }
   }
 
+
+
   let weatherDescription, windSpeed, feelsLike, sunriseTime, sunsetTime;
 
   if (weather && weather.weather) {
@@ -64,7 +69,7 @@ const Weather = () => {
     windSpeed = weather.wind.speed;
     feelsLike = Math.round(weather.main.feels_like);
   
-    // Remove seconds
+    // Format time as XX:XXAM/PM
     const options = { hour: 'numeric', minute: '2-digit', hour12: true }; // Define options for 12-hour format
     const sunriseDate = new Date(weather.sys.sunrise * 1000);
     const sunsetDate = new Date(weather.sys.sunset * 1000);
@@ -96,6 +101,7 @@ const Weather = () => {
             <h3>{weather.name}, {weather.sys.country}</h3>
             <div className="horContainer">
               <p className="temp">
+
               {unit === 'metric'
                 ? `${Math.round(weather.main.temp)}°C`
                 : `${Math.round((weather.main.temp * 9) / 5 + 32)}°F`}
@@ -120,6 +126,7 @@ const Weather = () => {
           </div>
         )}
       </div>
+      
       <button id='changeUnit' onClick={() => setUnit(unit === 'metric' ? 'imperial' : 'metric')}>
         switch to {unit === 'metric' ? 'imperial' : 'metric'}
       </button>
